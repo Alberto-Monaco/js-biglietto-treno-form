@@ -52,7 +52,7 @@ const ageEl = document.getElementById('age')
 const FormEl = document.querySelector('form')
 console.log(nameEl, kilometerEl, ageEl)
 
-const cardEl = document.querySelector('.card')
+const BigliettoEl = document.querySelector('.biglietto')
 
 FormEl.addEventListener('submit', function (e) {
 	e.preventDefault()
@@ -81,12 +81,15 @@ FormEl.addEventListener('submit', function (e) {
 	console.log(`Il totale che pagherai è € ${total_around} ${message}`)
 
 	const ticketEl = `
+    <h1 class="biglietto text-center py-3 text-white">Il tuo biglietto</h1>
+    <div class="container bg-white py-4 text-center">
+				<div class="card row">
                     <h2>Nome passeggero</h2>
-					<p id="name">${name}</p>
+					<h3 id="name">${name}</h3>
 					<h2>Costo biglietto</h2>
-					<p id="cost">${total_around}</p>
+					<h3 id="cost">€ ${total_around}</h3>
 					<h2>Offerta</h2>
-					<p id="message">${message}</p>
+					<h3 id="message">${message}</h3></div>
 `
-	cardEl.insertAdjacentHTML('beforeend', ticketEl)
+	BigliettoEl.insertAdjacentHTML('beforeend', ticketEl)
 })
