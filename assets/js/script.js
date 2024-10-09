@@ -13,7 +13,7 @@ Nota 2:
 Le milestone vanno seguite in ordine. Non passate alla richiesta della m2 se non avete prima completato la m1.*/
 
 // prima fase: preparazione
-let kilometer
+/*let kilometer
 let age
 let total
 let total_around
@@ -44,3 +44,49 @@ total_around = Number(total.toFixed(2))
 
 //quarta fase: output
 console.log(`Il totale che pagherai è € ${total_around} ${message}`)
+*/
+
+const nameEl = document.getElementById('textname')
+const kilometerEl = document.getElementById('numberkilometer')
+const ageEl = document.getElementById('age')
+const FormEl = document.querySelector('form')
+console.log(nameEl, kilometerEl, ageEl)
+
+const cardEl = document.querySelector('.card')
+
+FormEl.addEventListener('submit', function (e) {
+	e.preventDefault()
+	const name = nameEl.value
+	const kilometer = Number(kilometerEl.value)
+	const age = Number(ageEl.value)
+	let price_km = 0.21
+	console.log(name, kilometer, age)
+	let message
+	let total
+	let total_around
+
+	const final_price = kilometer * price_km
+	if (age < 18) {
+		total = final_price - (final_price * 20) / 100
+		message = 'comprensivo del 20% di sconto'
+	} else if (age > 65) {
+		total = final_price - (final_price * 40) / 100
+		message = 'comprensivo del 40% di sconto'
+	} else {
+		total = final_price
+		message = 'e non hai diritto a sconti'
+	}
+	total_around = Number(total.toFixed(2))
+
+	console.log(`Il totale che pagherai è € ${total_around} ${message}`)
+
+	const ticketEl = `
+                    <h2>Nome passeggero</h2>
+					<p id="name">${name}</p>
+					<h2>Costo biglietto</h2>
+					<p id="cost">${total_around}</p>
+					<h2>Offerta</h2>
+					<p id="message">${message}</p>
+`
+	cardEl.insertAdjacentHTML('beforeend', ticketEl)
+})
