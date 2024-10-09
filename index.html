@@ -12,9 +12,32 @@
 		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 	<body>
-		<header></header>
-		<main></main>
-		<footer></footer>
+		<main class="bg-paper vh-100">
+			<h1 class="text-center py-3 text-white">Biglietto Treno</h1>
+			<div class="container bg-white py-4 borderradius-3 text-center">
+				<div class="row">
+					<div class="col-4 text-white">
+						<div class="form-group">
+							<label for="textname">Nome</label>
+							<input type="text" name="textname" id="textname" placeholder="Nome passeggero" />
+						</div>
+					</div>
+					<div class="col-4 text-white">
+						<div class="form-group">
+							<label for="numberkilometer">Km</label>
+							<input type="number" name="numberkilometer" id="numberkilometer" placeholder="km" />
+						</div>
+					</div>
+					<div class="col-4 text-white">
+						<div class="form-group">
+							<label for="age">Anni</label>
+							<input type="number" name="age" id="age" placeholder="Età passegero" />
+						</div>
+					</div>
+					<div class="py-4"><button class="btn col-2 text-color bg-light">invia</button></div>
+				</div>
+			</div>
+		</main>
 		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
