@@ -81,15 +81,28 @@ FormEl.addEventListener('submit', function (e) {
 	console.log(`Il totale che pagherai è € ${total_around} ${message}`)
 
 	const ticketEl = `
-    <h1 class="biglietto text-center py-3 text-white">Il tuo biglietto</h1>
-    <div class="container bg-white py-4 text-center">
-				<div class="card row">
-                    <h2>Nome passeggero</h2>
-					<h3 id="name">${name}</h3>
-					<h2>Costo biglietto</h2>
-					<h3 id="cost">€ ${total_around}</h3>
-					<h2>Offerta</h2>
-					<h3 id="message">${message}</h3></div>
+<h1 class="biglietto text-center py-4 text-white">Il tuo biglietto</h1>
+				<div class="card container bg-white text-center">
+					<div class=" row ">
+						<div class="col-3  py-3 ">
+							<h4>Nome passeggero</h4>
+							<h5 id="name">${name}</h5>
+						</div>
+						<div class="col-3 py-3">
+							<h4>Costo biglietto</h4>
+							<h5 id="cost">€ ${total_around}</h5>
+						</div>
+						<div class="col-3  py-3">
+							<h4>Offerta</h4>
+							<h5 id="message">${message}</h5>
+						</div>
+						<div class="col-3  py-3">
+							<h4>kilometri percorsi</h4>
+							<h5 id="message">${kilometer}</h5>
+						</div>
+
+					</div>
+				</div>
 `
 	BigliettoEl.insertAdjacentHTML('beforeend', ticketEl)
 })
