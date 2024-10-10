@@ -18,17 +18,19 @@
 				<form class="row">
 					<div class="col-4">
 						<label for="textname">Nome</label>
-						<input type="text" name="textname" id="textname" placeholder="Nome passeggero" />
+						<input type="text" name="textname" id="textname" placeholder="Nome passeggero" required />
 					</div>
 					<div class="col-4">
 						<label for="numberkilometer">Km</label>
-						<input type="number" name="numberkilometer" id="numberkilometer" placeholder="Km da percorrere" />
+						<input type="number" name="numberkilometer" id="numberkilometer" placeholder="Km da percorrere" required />
 					</div>
 					<div class="col-4">
 						<label for="age">Anni</label>
-						<input type="number" name="age" id="age" placeholder="Età passeggero" />
+						<input type="number" name="age" id="age" placeholder="Età passeggero" required />
 					</div>
-					<div class="py-4"><button id="submit" class="btn text-color bg-light">Genera</button></div>
+					<div class="py-4">
+						<button id="submit" class="btn text-color bg-light">Genera</button>
+					</div>
 				</form>
 			</div>
 			<div class="card-body biglietto"></div>
